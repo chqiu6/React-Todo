@@ -42,14 +42,37 @@ class App extends React.Component {
       })
     })
   }
+
+  //add a new todo entry
+  addTodo = post => {
+    const newTodo = {
+      name: post,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      ...this.state, 
+      todoData: [... this.state.todoData, newTodo]
+    });
+  };
+  
+  //completed todos
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      ... this.state, 
+      todoData: this.state.todoData.filter((item) => !item.completed)
+    });
+  };
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        {/* <TodoForm/> */}
+        <TodoForm addTodo = {this.addTodo}/>
         <TodoList
         toggleTodo = {this.toggleTodo}
-        todos = {this.state.todoData}/>
+        todos = {this.state.todoData}
+        clearTodo = {this.clearCompleted}/>
       </div>
     );
   }
