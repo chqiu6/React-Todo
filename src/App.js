@@ -36,7 +36,7 @@ class App extends React.Component {
           return {
             //returns item with completed toggled
             ...todo,
-            completed: !todo.completed
+            completed:!todo.completed
           };
         }
         return todo;
@@ -49,11 +49,11 @@ class App extends React.Component {
     const newTodo = {
       name: post,
       id: Date.now(),
-      completed: false
+      completed:false
     };
     this.setState({
       ...this.state, 
-      todoData: [... this.state.todoData, newTodo]
+      todoData:[...this.state.todoData, newTodo]
     });
   };
   
@@ -61,13 +61,13 @@ class App extends React.Component {
   clearCompleted = e => {
     e.preventDefault();
     this.setState({
-      ... this.state, 
-      todoData: this.state.todoData.filter((item) => !item.completed)
+      ...this.state, 
+      todoData:this.state.todoData.filter((item) => !item.completed)
     });
   };
   render() {
     return (
-      <div>
+      <div className = "App">
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addTodo = {this.addTodo}/>
         <TodoList

@@ -95,11 +95,33 @@ input::placeholder {
   margin-top: 16px;
 } */
 
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0 36px;
+  max-width: 665px;
+  margin: 0 auto;
+}
+
+body{ 
+  background-color : skyblue; 
+}
+
+button {
+  background-color: #E6E6FA;
+}
+
+button:active {
+  background-color : black;
+  color : white; 
+}
+
 .todo.completed {
-  color: green;
+  color: #003366;
   text-decoration: line-through;
 }
 
 .todo {
-  color: red;
+  color: #c8a2c8;
+  font-weight : bold; 
 }
